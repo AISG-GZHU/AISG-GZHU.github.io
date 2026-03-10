@@ -9,7 +9,7 @@ profile:
   image: hezhao1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>limohan [at] gzhu [dot] edu [dot] cn</p>
+    <p>联系方式：limohan [at] gzhu [dot] edu [dot] cn</p>
 
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
