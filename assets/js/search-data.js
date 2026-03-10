@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "实验室近期开展的科研项目，按时间倒序排列。",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
         },{id: "nav-people",
           title: "people",
-          description: "members of the lab or group",
+          description: "实验室内成员。",
           section: "Navigation",
           handler: () => {
             window.location.href = "/people/";
