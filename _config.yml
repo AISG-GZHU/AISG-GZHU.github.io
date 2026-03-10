@@ -2,17 +2,17 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: 标签名 # the website title (if blank, full name will be used instead)
-first_name: 底部1
-middle_name: 底部2
-last_name: 底部3
+title: 可信人工智能实验室-广州大学网络空间安全学院 # the website title (if blank, full name will be used instead)
+first_name: 可信人工智能实验室-广州大学网络空间安全学院
+middle_name: 
+last_name: 
 contact_note: >
-  底部联系方式
+  Trustworthy Artificial Intelligence Lab
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  描述
+  
 footer_text: >
-  底部4
-keywords: 关键词 # add your own keywords or leave empty
+  
+keywords:  # add your own keywords or leave empty
 lang: cn # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: icon1.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
