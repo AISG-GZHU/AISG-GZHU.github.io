@@ -9,22 +9,22 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-publications",
-          title: "publications",
+  },{id: "nav-学术成果",
+          title: "学术成果",
           description: "实验室发表的学术论文、专利等成果，按时间倒序排列.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "实验室近期开展的科研项目，按时间倒序排列。",
+        },{id: "nav-研究方向",
+          title: "研究方向",
+          description: "实验室主要研究方向。",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-people",
-          title: "people",
+        },{id: "nav-成员",
+          title: "成员",
           description: "实验室内成员。",
           section: "Navigation",
           handler: () => {
