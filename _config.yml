@@ -50,7 +50,7 @@ external_services:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -202,7 +202,7 @@ exclude:
   - readme_preview/
   - vendor
   - _pages/blog.md      # 隐藏博客页面
-  #- _posts/             # 隐藏所有博客文章
+  - _posts/             # 隐藏所有博客文章
  # - _news/announcement_*.md  # 隐藏所有新闻公告（可选）
   - _pages/repositories.md
   - _pages/cv.md
