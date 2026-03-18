@@ -17,7 +17,7 @@ profiles:
       <p>李默涵</p>
       <p>职称：教授</p>
       <p>邮箱：limohan [at] gzhu [dot] edu [dot] cn</p>
-      <p>研究方向：人工智能安全、神经网络后门、主动防御、欺骗防御等。</p>
+      <p>研究方向：人工智能安全、四蜜、大模型安全、具身智能安全、主动防御、欺骗防御。</p>
 
   - align: left
     image: xuyixiao.jpg
