@@ -2,41 +2,35 @@
 layout: page
 ---
 <style>
-  .member-list {
-    display: grid;
-    gap: 1.1rem;
-    margin-top: 1.5rem;
+  .member-profile-entry {
+    clear: both;
+    overflow: hidden;
   }
 
-  .member-profile {
-    align-items: center;
-    border-bottom: 1px solid var(--global-divider-color);
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: 145px minmax(0, 1fr);
-    padding: 1.1rem 0;
+  .member-profile-entry hr {
+    margin: 1.35rem 0;
   }
 
-  .member-profile:first-child {
-    padding-top: 0;
+  .member-profile-entry .profile {
+    width: 220px;
+    max-width: 34%;
+    text-align: center;
   }
 
-  .member-photo {
-    height: 132px;
-    justify-self: center;
-    width: 132px;
+  .member-profile-entry .profile figure {
+    height: 180px;
+    margin: 0 auto 0.65rem;
+    overflow: hidden;
+    width: 180px;
   }
 
-  .member-photo figure,
-  .member-photo picture {
+  .member-profile-entry .profile picture {
     display: block;
     height: 100%;
-    margin: 0;
-    overflow: hidden;
     width: 100%;
   }
 
-  .member-photo img {
+  .member-profile-entry .profile img {
     background: #f6f8fa;
     display: block;
     height: 100% !important;
@@ -45,55 +39,55 @@ layout: page
     width: 100% !important;
   }
 
-  .member-details {
-    min-width: 0;
+  .member-profile-entry .profile .more-info {
+    font-family: inherit;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-top: 0.25rem;
+    text-align: left;
   }
 
-  .member-info {
-    color: var(--global-text-color);
-    font-size: 0.92rem;
-    line-height: 1.55;
-    margin-bottom: 0.55rem;
-  }
-
-  .member-info p {
+  .member-profile-entry .profile .more-info p {
     display: block;
-    margin: 0.08rem 0;
+    margin: 0.12rem 0;
   }
 
-  .member-info p:first-child {
-    color: var(--global-text-color);
-    font-size: 1.12rem;
+  .member-profile-entry .profile .more-info p:first-child {
+    font-size: 1.05rem;
     font-weight: 700;
-    line-height: 1.35;
     margin-bottom: 0.25rem;
+    text-align: center;
   }
 
-  .member-bio {
-    color: var(--global-text-color);
-    font-size: 0.94rem;
+  .member-profile-entry .clearfix {
+    font-size: 0.95rem;
     line-height: 1.75;
-  }
-
-  .member-bio p:last-child {
-    margin-bottom: 0;
+    min-height: 210px;
   }
 
   @media (max-width: 575.98px) {
-    .member-profile {
-      grid-template-columns: 1fr;
-      gap: 0.85rem;
+    .member-profile-entry {
+      overflow: visible;
+    }
+
+    .member-profile-entry .profile {
+      float: none !important;
+      margin: 0 auto 1rem !important;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .member-profile-entry .profile figure {
+      height: 150px;
+      width: 150px;
+    }
+
+    .member-profile-entry .profile .more-info {
       text-align: center;
     }
 
-    .member-photo {
-      height: 118px;
-      width: 118px;
-    }
-
-    .member-info,
-    .member-bio {
-      text-align: left;
+    .member-profile-entry .clearfix {
+      min-height: 0;
     }
   }
 </style>
@@ -101,38 +95,34 @@ layout: page
 <div class="post">
   <article>
     {% if page.profiles %}
-      <div class="member-list">
-        {% for profile in page.profiles %}
-          <section class="member-profile">
-            <div class="member-photo">
-              {% if profile.image %}
-                {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-                {% if profile.image_circular %}
-                  {% assign profile_image_class = 'z-depth-1 rounded-circle' %}
-                {% else %}
-                  {% assign profile_image_class = 'z-depth-1 rounded' %}
-                {% endif %}
-                {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes="132px" alt=profile.image %}
+      {% for profile in page.profiles %}
+        <div class="member-profile-entry">
+          <hr>
+          <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
+            {% if profile.image %}
+              {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
+              {% if profile.image_circular %}
+                {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+              {% else %}
+                {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
               {% endif %}
-            </div>
+              {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes="180px" alt=profile.image %}
+            {% endif %}
+            {% if profile.more_info %}
+              <div class="more-info">{{ profile.more_info }}</div>
+            {% endif %}
+          </div>
 
-            <div class="member-details">
-              {% if profile.more_info %}
-                <div class="member-info">{{ profile.more_info }}</div>
-              {% endif %}
-
-              <div class="member-bio">
-                {% if profile.content %}
-                  {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-                  {{ profile_content | markdownify }}
-                {% else %}
-                  {{ content }}
-                {% endif %}
-              </div>
-            </div>
-          </section>
-        {% endfor %}
-      </div>
+          <div class="clearfix">
+            {% if profile.content %}
+              {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
+              {{ profile_content | markdownify }}
+            {% else %}
+              {{ content }}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
     {% endif %}
   </article>
 </div>
