@@ -26,60 +26,81 @@ horizontal: false
   line-height: 1.6;
 }
 
-.projects > .row > .col {
+.projects > .row > .project-col {
   display: flex;
+  padding-bottom: 1.25rem;
 }
 
-.projects > .row > .col > a {
+.projects .project-card-link {
+  color: inherit;
   display: flex;
   width: 100%;
 }
 
-.projects .card {
-  display: flex;
-  flex-direction: column;
-  height: 360px !important;
+.projects .project-card {
+  display: grid;
+  grid-template-rows: 40% 60%;
+  height: 380px !important;
+  overflow: hidden;
   width: 100%;
-  overflow: hidden;
 }
 
-.projects .card figure {
-  flex: 0 0 40%;
-  height: 40%;
-  margin: 0;
+.projects .project-card-media {
+  align-items: center;
+  background: #f6f8fa;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  min-height: 0;
   overflow: hidden;
+  width: 100%;
 }
 
-.projects .card picture {
+.projects .project-card-media figure,
+.projects .project-card-media picture {
   display: block;
   height: 100%;
-}
-
-.projects .card-img-top {
-  height: 100% !important;
-  width: 100%;
-  object-fit: cover;
-  padding-top: 0;
-}
-
-.projects .card-body {
-  flex: 0 0 60%;
-  height: 60%;
-  padding: 0.95rem 1rem;
+  margin: 0;
+  min-height: 0;
   overflow: hidden;
+  width: 100%;
 }
 
-.projects .card-title {
-  font-size: 1.05rem;
+.projects .project-card-img {
+  display: block;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center center;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.projects .project-card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.95rem 1rem;
+}
+
+.projects .project-card-title {
+  display: -webkit-box;
+  font-size: 1.02rem;
   line-height: 1.35;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
+  min-height: 2.75rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
-.projects .card-text {
+.projects .project-card-text {
   color: #333;
   display: -webkit-box;
-  font-size: 0.9rem;
-  line-height: 1.55;
+  flex: 1;
+  font-size: 0.88rem;
+  line-height: 1.5;
   margin-bottom: 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -87,8 +108,12 @@ horizontal: false
 }
 
 @media (max-width: 575.98px) {
-  .projects .card {
-    height: 340px !important;
+  .projects .project-card {
+    height: 350px !important;
+  }
+
+  .projects .project-card-body {
+    padding: 0.85rem 0.9rem;
   }
 }
 </style>
