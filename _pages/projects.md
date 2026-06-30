@@ -25,6 +25,72 @@ horizontal: false
   font-size: 14px;
   line-height: 1.6;
 }
+
+.projects > .row > .col {
+  display: flex;
+}
+
+.projects > .row > .col > a {
+  display: flex;
+  width: 100%;
+}
+
+.projects .card {
+  display: flex;
+  flex-direction: column;
+  height: 360px !important;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects .card figure {
+  flex: 0 0 40%;
+  height: 40%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.projects .card picture {
+  display: block;
+  height: 100%;
+}
+
+.projects .card-img-top {
+  height: 100% !important;
+  width: 100%;
+  object-fit: cover;
+  padding-top: 0;
+}
+
+.projects .card-body {
+  flex: 0 0 60%;
+  height: 60%;
+  padding: 0.95rem 1rem;
+  overflow: hidden;
+}
+
+.projects .card-title {
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: 0.55rem;
+}
+
+.projects .card-text {
+  color: #333;
+  display: -webkit-box;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+@media (max-width: 575.98px) {
+  .projects .card {
+    height: 340px !important;
+  }
+}
 </style>
 
 <div class="projects">
