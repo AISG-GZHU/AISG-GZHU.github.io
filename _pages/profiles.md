@@ -65,7 +65,7 @@ profiles:
       <p>研究方向：大模型应用安全</p>
 
   - align: right
-    image: wanjiawen.jpg
+    image: wanjiawen.png
     content: about_wanjiawen.md
     image_circular: true
     more_info: >
@@ -83,7 +83,7 @@ profiles:
       <p>研究方向：具身智能</p>
 
   - align: right
-    image: renluyi.jpg
+    image: renluyi.png
     content: about_renluyi.md
     image_circular: true
     more_info: >
@@ -101,7 +101,7 @@ profiles:
       <p>研究方向：后门攻击与防御</p>
 
   - align: right
-    image: chenkaixin.jpg
+    image: chenkaixin.jpeg
     content: about_chenkaixin.md
     image_circular: true
     more_info: >
